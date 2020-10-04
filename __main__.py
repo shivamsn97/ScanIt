@@ -1,10 +1,12 @@
 import vt
 import config
 import argparse
-import os.path
 import os
 import hashlib, time
 import colorama
+import time
+
+colorama.init(convert=True)
 
 def check_file_exists(given_path):
     if not os.path.isfile(given_path):
@@ -48,19 +50,28 @@ with open(file_path,"rb") as f:
 
 with vt.Client(config.api_key) as client:
     try:
-        print("Checking if file already available in virustotal db.", end="")
+        print("Checking if file already available in VirusTotal DB.", end="")
         stats = client.get_object("/files/{}".format(file_hash)).last_analysis_stats
-    except vt.error.APIError:
+        print("\rFile is already available in VirusTotal DB")
+    except vt.error.APIError as ex:
+        if not ex.code == "NotFoundError":
+            raise
         with open(file_path, "rb") as f:
-            print("\rFile not available in virustotal db. Now uploading.")
-            analysis = client.scan_file(f)
-            while True:
-                analysis = client.get_object("/analyses/{}".format(analysis.id))
-                print("\r" + colorama.Fore.MAGENTA +  "Current Status: " + colorama.Fore.RESET + analysis.status, end="")
-                if analysis.status == "completed":
-                    break
-                time.sleep(10)
-            stats = analysis.stats
+            choice = input("\rFile not available in VirusTotal DB. Do you want to upload? (Internet charges may apply) (Y/N)\n :: ")
+            if choice.lower() in ["y", "yes"]:
+                print(colorama.Fore.GREEN + "Now Uploading. ")
+                analysis = client.scan_file(f)
+                while True:
+                    analysis = client.get_object("/analyses/{}".format(analysis.id))
+                    print("\r" + colorama.Fore.MAGENTA +  "Current Status: " + colorama.Fore.RESET + analysis.status, end="")
+                    if analysis.status == "completed":
+                        break
+                    time.sleep(10)
+                stats = analysis.stats
+            else:
+                print("Operation cancelled. ")
+                time.sleep(2)
+                exit()
 
     print_result(stats, file_path)
     input("Press enter to exit...")

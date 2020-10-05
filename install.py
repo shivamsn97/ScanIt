@@ -26,6 +26,7 @@ except ModuleNotFoundError:
     exit()
 
 try:
+    sys.path.append(dir_path)
     import config
 except ModuleNotFoundError:
     print("Needs to generate config file first. ")
@@ -44,8 +45,8 @@ except ModuleNotFoundError:
     while not API_KEY:
         API_KEY = input("Something went wrong. Paste API key :: ").strip()
     try:
-        client = vt.Client(API_KEY)
-        file = client.get_object("/files/44d88612fea8a8f36de82e1278abb02f")
+        with vt.Client(API_KEY) as client:
+            file = client.get_object("/files/44d88612fea8a8f36de82e1278abb02f")
     except vt.error.APIError as ex:
         if ex.code == "WrongCredentialsError":
             print("The API Key you entered is Invalid. Exiting...")

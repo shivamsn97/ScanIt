@@ -44,13 +44,18 @@ parser.add_argument("filepath", help="Path of the file you want to scan.", type=
 args = parser.parse_args()
 file_path = args.filepath
 
+print("Calculating Hash.", end="")
 with open(file_path,"rb") as f:
-    bytes = f.read() # read entire file as bytes
-    file_hash = hashlib.sha256(bytes).hexdigest()
+    # bytes = f.read() # read entire file as bytes
+    # file_hash = hashlib.sha256(bytes).hexdigest()
+    file_hash = hashlib.md5()
+    while chunk := f.read(8192):
+        file_hash.update(chunk)
+file_hash = file_hash.hexdigest()
 
 with vt.Client(config.api_key) as client:
     try:
-        print("Checking if file already available in VirusTotal DB.", end="")
+        print("\rChecking if file already available in VirusTotal DB.", end="")
         stats = client.get_object("/files/{}".format(file_hash)).last_analysis_stats
         print("\rFile is already available in VirusTotal DB.         ")
     except vt.error.APIError as ex:

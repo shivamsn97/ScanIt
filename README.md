@@ -39,6 +39,12 @@ python setup.py install  # may be python3 in case of linux
 pip uninstall scanit-cli  # May be pip3 in case of linux
 ```
 
+# Usage
+- You can use it from your cli using the command:
+```bash
+scanit somefile.exe
+```
+
 # Notes
 - Currently made only for Windows, contributions are welcome to make it work on linux too.
 - Your privacy is in your hands. Please do not upload sensitive files to virustotal db.

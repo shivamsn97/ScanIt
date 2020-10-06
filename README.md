@@ -4,9 +4,7 @@ Who keeps antivirus nowadays? Go on. Noone wants to slow down his PC AF for some
 ### NOTE: You are in `module` branch. For windows we suggest check out [master branch](https://github.com/shivamsn97/ScanIt/tree/master) too.
 
 # Why ScanIt?
-A lot of people, including me, prefers not to keep Antivirus in their PC. But sometimes we really need to scan a file for virus. At such times we use online virus scanners like VirusTotal.com. ScanIt has bring down this functionality to your cli. You can even add it to your context menu using install.py as shown in image below, and guess what? It doesn't slows down your system by even a 0.01 percent. So its time to goodbye AntiViruses and say hello to online file scan services.
-
-![Screenshot of ScanIt in context menu.](https://telegra.ph/file/edf19985aac281027e5d9.jpg)
+A lot of people, including me, prefers not to keep Antivirus in their PC. But sometimes we really need to scan a file for virus. At such times we use online virus scanners like VirusTotal.com. ScanIt has bring down this functionality to your cli, and guess what? It doesn't slows down your system by even a 0.01 percent. So its time to goodbye AntiViruses and say hello to online file scan services.
 
 # Privacy?
 The script first sends the hash of a file to VirusTotal to check if the same file is already available to VirusTotal. In this case your data is totally secure as the file is not uploaded. But if VirusTotal doesn't recognises that hash, then the script asks you if you want to upload the file, in case you answer with yes, it uploads the file. So it's up to you if you want to upload a file or not. Sensitive files should not be uploaded.

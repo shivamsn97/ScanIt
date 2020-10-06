@@ -20,6 +20,8 @@ The script first sends the hash of a file to VirusTotal to check if the same fil
 pip install scanit-cli  # may be pip3 in case of linux
 ```
 
+[Check out PyPi.](https://pypi.org/project/scanit-cli)
+
 ### Installation from repo:
 
 - Make sure you have `pip` and `git` installed. Now use the following commands to install scanit:

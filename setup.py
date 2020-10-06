@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="scanit-cli", # Replace with your own username
-    version="1.0.0",
+    version="1.0.2",
     author="Shivam Saini",
     author_email="shivamsn97@gmail.com",
     description="Scan files for virus online using VirusTotal directly from your cli.",

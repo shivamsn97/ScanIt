@@ -94,7 +94,8 @@ except ModuleNotFoundError:
 API_KEY = config.api_key
 
 def main():
-    colorama.init(convert=True)
+    if os.name == "nt":
+        colorama.init(convert=True)
     parser = argparse.ArgumentParser()
     parser.add_argument("filepath", help="Path of the file you want to scan.", type=check_file_exists)
     args = parser.parse_args()

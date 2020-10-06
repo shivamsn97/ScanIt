@@ -42,7 +42,7 @@ pip uninstall scanit-cli  # May be pip3 in case of linux
 # Usage
 - You can use it from your cli using the command:
 ```bash
-scanit somefile.exe
+$ scanit somefile.sh
 ```
 
 # Notes

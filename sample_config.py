@@ -1,5 +1,0 @@
-"""
-RENAME THIS FILE TO config.py AND MAKE CHANGES ACCORDINGLY.
-"""
-
-api_key = ""

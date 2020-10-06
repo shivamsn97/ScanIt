@@ -12,7 +12,7 @@ python_path = sys.executable
 config_path = os.path.join(dir_path, "config.py")
 
 if os.name != "nt":
-    print("Only Windows is supported.")
+    print("Only Windows is supported. For linux, you can use the 'module' branch, https://github.com/shivamsn97/ScanIt/tree/module")
     time.sleep(2)
     exit()
 

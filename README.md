@@ -11,6 +11,15 @@ The script first sends the hash of a file to VirusTotal to check if the same fil
 
 # Installation
 First make sure you have python (version >= 3) and pip installed in your system.
+
+### For Linux Users:
+- Linux users can use the [module branch](https://github.com/shivamsn97/ScanIt/tree/module) and install scanit-cli to use scanit.
+
+- To install scanit-cli, use the following command:
+```bash
+pip3 install scanit-cli
+```
+
 ### First, install the dependencies:
 ```shell
 pip install -r requirments.txt 
@@ -42,7 +51,7 @@ pip install -r requirments.txt
 - Done
 
 # Notes
-- Currently made only for Windows, contributions are welcome to make it work on linux too.
+- Linux support is added in [module branch](https://github.com/shivamsn97/ScanIt/tree/module). Contributions are welcome.
 - Your privacy is in your hands. Please do not upload sensitive files to virustotal db.
 - Please do not open low-efforts PR
 - A star to the repo would be awesome.

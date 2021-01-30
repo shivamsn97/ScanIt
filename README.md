@@ -46,7 +46,7 @@ $ scanit somefile.sh
 ```
 
 # Notes
-- Currently made only for Windows, contributions are welcome to make it work on linux too.
+- ~Currently made only for Windows, contributions are welcome to make it work on linux too.~
 - Your privacy is in your hands. Please do not upload sensitive files to virustotal db.
 - Please do not open low-efforts PR
 - A star to the repo would be awesome.

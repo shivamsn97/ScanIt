@@ -12,17 +12,9 @@ The script first sends the hash of a file to VirusTotal to check if the same fil
 # Installation
 First make sure you have python (version >= 3) and pip installed in your system.
 
-### For Linux Users:
-- Linux users can use the [module branch](https://github.com/shivamsn97/ScanIt/tree/module) and install scanit-cli to use scanit.
-
-- To install scanit-cli, use the following command:
-```bash
-pip3 install scanit-cli
-```
-
 ### First, install the dependencies:
 ```shell
-pip install -r requirments.txt 
+pip install -r requirements.txt 
 ```
 ### Now to create config.py, and adding to your context menu:
 #### Automatic method (Recommended)
@@ -49,6 +41,14 @@ pip install -r requirments.txt
 - Right click on ScanItbyShivam, and delete it.
 - Confirm deletation
 - Done
+
+# For Linux Users:
+- Linux users can use the [module branch](https://github.com/shivamsn97/ScanIt/tree/module) and install scanit-cli to use scanit.
+
+- To install scanit-cli, use the following command:
+```bash
+pip3 install scanit-cli
+```
 
 # Notes
 - Linux support is added in [module branch](https://github.com/shivamsn97/ScanIt/tree/module). Contributions are welcome.
